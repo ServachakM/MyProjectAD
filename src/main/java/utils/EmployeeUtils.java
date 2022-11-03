@@ -21,12 +21,9 @@ public class EmployeeUtils {
                     employees.add(employee);
                 }
             }
-
-            return employees;
-        } else {
-
-            return null;
         }
+
+        return employees;
     }
 
     public static List<IEmployee> findByPartOfTheName(IEmployee[] employeeArray, String partOfTheName) {
@@ -37,12 +34,8 @@ public class EmployeeUtils {
                     employees.add(employee);
                 }
             }
-
-            return employees;
-        } else {
-
-            return null;
         }
+        return employees;
     }
 
     public static double getSmallestSalary(IEmployee[] employeeArray) {
@@ -147,6 +140,17 @@ public class EmployeeUtils {
         }
 
         return minBonus;
+    }
+
+    public static double getSumSalary(IEmployee[] employeeArray) {
+        double sum = 0;
+        if (employeeArray != null && employeeArray.length > 0) {
+            for (IEmployee employee : employeeArray) {
+                sum += employee.getSalary();
+            }
+        }
+
+        return sum;
     }
 
 

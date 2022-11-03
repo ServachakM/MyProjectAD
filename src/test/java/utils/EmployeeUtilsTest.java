@@ -36,14 +36,14 @@ public class EmployeeUtilsTest {
 
     @Test
     public void testFindByName() {
+
         final String name = "Oleg";
         List<IEmployee> expectedResult = List.of(oleg);
 
         Assert.assertEquals(EmployeeUtils.findByName(EMPLOYEE_ARRAY, name),
                 expectedResult);
         Assert.assertEquals(EmployeeUtils.findByName(EMPTY_ARRAY, name),
-                null);
-
+                new ArrayList<>());
     }
 
     @Test
@@ -63,7 +63,6 @@ public class EmployeeUtilsTest {
 
         Assert.assertEquals(EmployeeUtils.getSmallestSalary(EMPLOYEE_ARRAY), salary);
         Assert.assertEquals(EmployeeUtils.getSmallestSalary(EMPTY_ARRAY), Double.MAX_VALUE);
-
     }
 
     @Test
@@ -73,7 +72,6 @@ public class EmployeeUtilsTest {
 
         Assert.assertEquals(EmployeeUtils.getLargestSalary(EMPLOYEE_ARRAY), salary);
         Assert.assertEquals(EmployeeUtils.getLargestSalary(EMPTY_ARRAY), Double.MIN_VALUE);
-
     }
 
     @Test
@@ -112,5 +110,12 @@ public class EmployeeUtilsTest {
 
         Assert.assertEquals(EmployeeUtils.minBonusToSalary(MANAGER_ARR), bonus);
         Assert.assertEquals(EmployeeUtils.minBonusToSalary(EMPTY_ARR), Double.MAX_VALUE);
+    }
+
+    @Test
+    public void testGetSumSalary() {
+
+        Assert.assertEquals(EmployeeUtils.getSumSalary(EMPLOYEE_ARRAY), 22560.0);
+        Assert.assertEquals(EmployeeUtils.getSumSalary(EMPTY_ARRAY), 0);
     }
 }

@@ -1,7 +1,7 @@
 *.iml
 .idea
 *.class
-target/
+/target/
 *.DS_Store
 local.properties
 debug.log

@@ -28,11 +28,11 @@ public class EmployeeUtilsTest {
     Manager olena = new Manager("Olena", 21, 'F', 14);
     Manager natalia = new Manager("Natalia", 36, 'F', 32);
 
-    private final IEmployee[] EMPTY_ARRAY = new Manager[]{};
-    private final IManager[] EMPTY_ARR = new Manager[]{};
+    private final IEmployee[] EMPTY_ARR_EMPLOYEE = new Manager[]{};
+    private final IManager[] EMPTY_ARR_MANAGER = new Manager[]{};
 
     private final IEmployee[] EMPLOYEE_ARRAY = {mark, oleg, oleksiy, olena, natalia};
-    private final IManager[] MANAGER_ARR = {oleg, oleksiy, olena, natalia, mark};
+    private final IManager[] MANAGER_ARRAY = {oleg, oleksiy, olena, natalia, mark};
 
     @Test
     public void testFindByName() {
@@ -42,7 +42,7 @@ public class EmployeeUtilsTest {
 
         Assert.assertEquals(EmployeeUtils.findByName(EMPLOYEE_ARRAY, name),
                 expectedResult);
-        Assert.assertEquals(EmployeeUtils.findByName(EMPTY_ARRAY, name),
+        Assert.assertEquals(EmployeeUtils.findByName(EMPTY_ARR_EMPLOYEE, name),
                 new ArrayList<>());
     }
 
@@ -62,7 +62,7 @@ public class EmployeeUtilsTest {
         final double salary = 3990.0;
 
         Assert.assertEquals(EmployeeUtils.getSmallestSalary(EMPLOYEE_ARRAY), salary);
-        Assert.assertEquals(EmployeeUtils.getSmallestSalary(EMPTY_ARRAY), Double.MAX_VALUE);
+        Assert.assertEquals(EmployeeUtils.getSmallestSalary(EMPTY_ARR_EMPLOYEE), Double.MAX_VALUE);
     }
 
     @Test
@@ -71,7 +71,7 @@ public class EmployeeUtilsTest {
         final double salary = 5880.0;
 
         Assert.assertEquals(EmployeeUtils.getLargestSalary(EMPLOYEE_ARRAY), salary);
-        Assert.assertEquals(EmployeeUtils.getLargestSalary(EMPTY_ARRAY), Double.MIN_VALUE);
+        Assert.assertEquals(EmployeeUtils.getLargestSalary(EMPTY_ARR_EMPLOYEE), Double.MIN_VALUE);
     }
 
     @Test
@@ -79,43 +79,43 @@ public class EmployeeUtilsTest {
         List<IEmployee> expectedResult = List.of(oleksiy);
 
         Assert.assertEquals(EmployeeUtils.getEmployeeMinSalary(EMPLOYEE_ARRAY), expectedResult);
-        Assert.assertEquals(EmployeeUtils.getEmployeeMinSalary(EMPTY_ARRAY), new ArrayList<>());
+        Assert.assertEquals(EmployeeUtils.getEmployeeMinSalary(EMPTY_ARR_EMPLOYEE), new ArrayList<>());
     }
 
     @Test
     public void testMinNumberOfSubordinates() {
 
-        Assert.assertEquals(EmployeeUtils.minNumberOfSubordinates(MANAGER_ARR), 11);
-        Assert.assertEquals(EmployeeUtils.minNumberOfSubordinates(EMPTY_ARR), -1);
+        Assert.assertEquals(EmployeeUtils.minNumberOfSubordinates(MANAGER_ARRAY), 11);
+        Assert.assertEquals(EmployeeUtils.minNumberOfSubordinates(EMPTY_ARR_MANAGER), -1);
     }
 
     @Test
     public void testMaxNumberOfSubordinates() {
 
-        Assert.assertEquals(EmployeeUtils.maxNumberOfSubordinates(MANAGER_ARR), 32);
-        Assert.assertEquals(EmployeeUtils.maxNumberOfSubordinates(EMPTY_ARR), Integer.MIN_VALUE);
+        Assert.assertEquals(EmployeeUtils.maxNumberOfSubordinates(MANAGER_ARRAY), 32);
+        Assert.assertEquals(EmployeeUtils.maxNumberOfSubordinates(EMPTY_ARR_MANAGER), Integer.MIN_VALUE);
     }
 
     @Test
     public void testMaxBonusToSalary() {
         final double bonus = 2880.0;
 
-        Assert.assertEquals(EmployeeUtils.maxBonusToSalary(MANAGER_ARR), bonus);
-        Assert.assertEquals(EmployeeUtils.maxBonusToSalary(EMPTY_ARR), Double.MIN_VALUE);
+        Assert.assertEquals(EmployeeUtils.maxBonusToSalary(MANAGER_ARRAY), bonus);
+        Assert.assertEquals(EmployeeUtils.maxBonusToSalary(EMPTY_ARR_MANAGER), Double.MIN_VALUE);
     }
 
     @Test
     public void testMinBonusToSalary() {
         final double bonus = 990.0;
 
-        Assert.assertEquals(EmployeeUtils.minBonusToSalary(MANAGER_ARR), bonus);
-        Assert.assertEquals(EmployeeUtils.minBonusToSalary(EMPTY_ARR), Double.MAX_VALUE);
+        Assert.assertEquals(EmployeeUtils.minBonusToSalary(MANAGER_ARRAY), bonus);
+        Assert.assertEquals(EmployeeUtils.minBonusToSalary(EMPTY_ARR_MANAGER), Double.MAX_VALUE);
     }
 
     @Test
     public void testGetSumSalary() {
 
         Assert.assertEquals(EmployeeUtils.getSumSalary(EMPLOYEE_ARRAY), 22560.0);
-        Assert.assertEquals(EmployeeUtils.getSumSalary(EMPTY_ARRAY), 0);
+        Assert.assertEquals(EmployeeUtils.getSumSalary(EMPTY_ARR_EMPLOYEE), 0);
     }
 }

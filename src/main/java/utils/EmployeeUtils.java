@@ -1,7 +1,7 @@
 package utils;
 
-import hw8.IEmployee;
-import hw8.IManager;
+import employees.IEmployee;
+import employees.IManager;
 
 import java.util.ArrayList;
 import java.util.List;

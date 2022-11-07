@@ -1,8 +1,8 @@
 package utils;
 
-import hw8.IEmployee;
-import hw8.IManager;
-import hw8.Manager;
+import employees.IEmployee;
+import employees.IManager;
+import employees.Manager;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;

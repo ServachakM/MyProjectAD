@@ -1,4 +1,4 @@
-package hw8;
+package employees;
 
 public final class Worker extends BaseEmployee implements IEmployee {
 
@@ -7,7 +7,7 @@ public final class Worker extends BaseEmployee implements IEmployee {
     }
 
     @Override
-    public final double getBaseSalary() {
+    public double getBaseSalary() {
         return super.getBaseSalary();
     }
 

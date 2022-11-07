@@ -1,4 +1,4 @@
-package hw8;
+package employees;
 
 public interface IManager extends IEmployee{
 

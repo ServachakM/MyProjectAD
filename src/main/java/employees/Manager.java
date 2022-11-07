@@ -1,4 +1,4 @@
-package hw8;
+package employees;
 
 
 public class Manager extends BaseEmployee implements IManager{

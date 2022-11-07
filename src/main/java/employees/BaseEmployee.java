@@ -1,4 +1,4 @@
-package hw8;
+package employees;
 
 
 public abstract class BaseEmployee {
@@ -6,7 +6,7 @@ public abstract class BaseEmployee {
     private final double BASE_SALARY = 3000;
     private String name;
     private int age;
-    private char gender;
+    private final char gender;
 
 
     public BaseEmployee(String name, int age, char gender) {

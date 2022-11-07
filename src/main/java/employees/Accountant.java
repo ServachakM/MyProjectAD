@@ -1,8 +1,8 @@
-package hw8;
+package employees;
 
 public class Accountant implements IEmployee{
-    private String name;
-    private double baseSalary = 4500;
+    private final String name;
+    private final double baseSalary = 4500;
 
 
     public Accountant(String name) {

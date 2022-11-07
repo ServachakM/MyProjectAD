@@ -8,10 +8,6 @@ import java.util.List;
 
 public class EmployeeUtils {
 
-    /**
-     * HW6
-     */
-
     public static List<IEmployee> findByName(IEmployee[] employeeArray, String name) {
         List<IEmployee> employees = new ArrayList<>();
         if (employeeArray != null && employeeArray.length > 0) {
@@ -51,7 +47,6 @@ public class EmployeeUtils {
         return minSalary;
     }
 
-
     public static double getLargestSalary(IEmployee[] employeeArray) {
         double maxSalary = Double.MIN_VALUE;
         if (employeeArray != null && employeeArray.length > 0) {
@@ -77,10 +72,6 @@ public class EmployeeUtils {
 
         return employees;
     }
-
-    /**
-     * HW7
-     */
 
     public static int minNumberOfSubordinates(IManager[] managerArr) {
         int minNumberOfSubordinates = Integer.MAX_VALUE;
@@ -152,6 +143,4 @@ public class EmployeeUtils {
 
         return sum;
     }
-
-
 }
